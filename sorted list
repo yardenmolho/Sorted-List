@@ -1,0 +1,23 @@
+file=open('thefile.txt','w')
+#file.close()
+
+f=open(file,'r')
+print(f.read())
+dict1={}
+mlist=[]
+with open(file,"r") as f:
+mlist=f.read().split()
+for item in mlist:
+    if item in dict1:
+        dict1[item]+=1
+        
+    else:
+        dict1[item]=1 
+        
+    
+    sortedw=sorted(mlist,key=lambda place:place[1])
+ #מהתדירות הגבוהה לנמוכה
+    sortedw.reverse()
+    n=input("enter n")
+for i in range(0,n):
+    print(sortedw[i])
